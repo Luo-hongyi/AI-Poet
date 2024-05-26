@@ -9,7 +9,7 @@ def get_completion(prompt, model="gpt-3.5-turbo", temperature=0.5):
         messages = [{"role": "user", "content": prompt}]
         response = openai.ChatCompletion.create(
             model=model,
-            messages=messages,  # 使用 messages 而不是 prompt
+            messages=messages,  # use messages instead of prompt
             temperature=temperature
         )
         return response.choices[0].message['content'].strip()
@@ -21,7 +21,7 @@ def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0.
     try:
         response = openai.ChatCompletion.create(
             model=model,
-            messages=messages,  # 使用 messages 而不是 prompt
+            messages=messages,  # use messages instead of prompt
             temperature=temperature
         )
         return response.choices[0].message['content'].strip()
